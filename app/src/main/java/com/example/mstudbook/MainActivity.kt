@@ -18,7 +18,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import androidx.appcompat.app.AlertDialog
-import androidx.constraintlayout.widget.ConstraintLayout
 import kotlinx.coroutines.GlobalScope
 import org.jsoup.Jsoup
 import java.io.IOException
@@ -86,8 +85,9 @@ class MainActivity : AppCompatActivity() {
 
 //웹페이지 오픈
                 val webPage: Uri = Uri.parse("https://studbook.kra.co.kr/html/info/ind/s_majuck.jsp?mabun=${isValidDigit(query)}")
-                val intent = Intent(Intent.ACTION_VIEW, webPage)
                 startActivity(intent)
+
+
 
 //실제로는 말 정보를 보여주는 액티비티를 열어줘야 함
 //                val intent = Intent(getActivity(), HorseInfo::class.java)
@@ -246,12 +246,17 @@ class MainActivity : AppCompatActivity() {
 
                         dataList.add(info)
 
-                        CoroutineScope(Dispatchers.Main).launch {
-                            adapter.notifyDataSetChanged()
-                        }
-
                     }
                 }
+
+                CoroutineScope(Dispatchers.Main).launch {
+                    if (dataList.isEmpty()) {
+                        showAlertDialog("검색 결과가 없습니다.")
+                    } else {
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+
 
 
             }catch (e: IOException) {
