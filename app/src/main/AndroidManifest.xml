@@ -7,13 +7,15 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="모바일 말혈통"
         android:supportsRtl="true"
         android:theme="@style/Theme.MStudBook"
         tools:targetApi="31">
-        <activity
-            android:name=".MainActivity"
+<!--        android:label="@string/app_name"-->
+        <activity android:name=".MainActivity"
             android:exported="true">
+<!--            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"   -->
+<!--            상단 액션바 보이지 않게 하는 코드-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
