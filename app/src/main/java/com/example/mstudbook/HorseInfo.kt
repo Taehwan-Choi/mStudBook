@@ -22,31 +22,31 @@ class HorseInfo : AppCompatActivity() {
         viewPager = findViewById(R.id.viewPager)
         tabLayout = findViewById(R.id.tabLayout)
 
-        val adapter = ViewPagerAdapter(this)
+//        val adapter = ViewPagerAdapter(this)
 
-        viewPager.adapter = adapter
-
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = "Tab ${(position + 1)}"
-        }.attach()
+//        viewPager.adapter = adapter
+//
+//        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+//            tab.text = "Tab ${(position + 1)}"
+//        }.attach()
 
 
     }
 
 
 
-    private inner class ViewPagerAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
-        override fun getItemCount(): Int = 3
-
-        override fun createFragment(position: Int): Fragment {
-            return when (position) {
-                0 -> FirstFragment()
-                1 -> SecondFragment()
-                2 -> ThirdFragment()
-                else -> FirstFragment()
-            }
-        }
-    }
+//    private inner class ViewPagerAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
+//        override fun getItemCount(): Int = 3
+//
+//        override fun createFragment(position: Int): Fragment {
+//            return when (position) {
+//                0 -> FirstFragment()
+//                1 -> SecondFragment()
+//                2 -> ThirdFragment()
+//                else -> FirstFragment()
+//            }
+//        }
+//    }
 
 
 
