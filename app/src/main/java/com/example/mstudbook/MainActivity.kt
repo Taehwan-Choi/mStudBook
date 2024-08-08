@@ -85,9 +85,10 @@ class MainActivity : AppCompatActivity() {
 
 //웹페이지 오픈
                 val webPage: Uri = Uri.parse("https://studbook.kra.co.kr/html/info/ind/s_majuck.jsp?mabun=${isValidDigit(query)}")
+                val intent = Intent(Intent.ACTION_VIEW, webPage)
                 startActivity(intent)
 
-
+//                여기서, 해당 정보를 찾지 못했을 경우 경고 알림을 띄우고 자동으로 액티비티가 종료되며 이전 액티비티로 돌아가도록 기능 만들어야 함
 
 //실제로는 말 정보를 보여주는 액티비티를 열어줘야 함
 //                val intent = Intent(getActivity(), HorseInfo::class.java)
